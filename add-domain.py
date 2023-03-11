@@ -10,7 +10,7 @@ from db import domain_insert, sub_domain_insert , dns_record
 
 domain_url = "https://napi.arvancloud.ir/cdn/4.0/domains/dns-service"
 header = {"Content-Type": "application/json",
-          "Authorization": "Apikey 667645-676545gh-gfhhghh-hg454",
+          "Authorization": "Apikey 454545-gbhfhfghfgh-gfhhghh-hg454",
           "Accept": "application/json, text/plain, */*"}
 
 
@@ -46,14 +46,14 @@ def record_maker(a, subdomain):
 def update_dns (a):
     dns_url = "https://napi.arvancloud.ir/cdn/4.0/domains/{}/dns-service/ns-keys".format(a)
     body = {
-        "ns_keys": ["ns1.ippanel.com","ns2.ippanel.com"]
+        "ns_keys": ["ns1.domain.com","ns2.domain.com"]
     }
     return json.loads(requests.put(dns_url,headers=header , data=json.dumps(body)).text)
 
 
 
 
-with open("/home/admin/web/ippanel.com/dns_domain/add-list","r") as domain_file:
+with open("/home/dns_domain/add-list","r") as domain_file:
     new_domain = domain_file.read().split()
 
     for j in new_domain:
